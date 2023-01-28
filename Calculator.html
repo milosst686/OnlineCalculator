@@ -1,0 +1,114 @@
+<html >
+<head>
+    
+	</title>
+</head>
+<body>
+    <table  border="1", align = center , margin-top = 10px>
+	<tr align= right >
+	<td colspan = 4 >
+		<input type = 'textbox' id = 'result' widtx = '200px' value=0>
+	</td>
+	</tr>
+	<tr align=center>
+		<td width= '30px'; height = '30px' id = 'clear' >AC</td>
+		<td width= '30px'; height = '30px' id = 'reverse'>(</td>
+		<td width= '30px'; height = '30px' id= 'percentage'>)</td>
+		<td width= '30px'; height = '30px' id = 'devide'>/</td>
+	</tr>
+	<tr align=center>
+		<td height = '30px' id = 'num7'>7</td>
+		<td height = '30px' id = 'num8'>8</td>
+		<td height = '30px' id = 'num9'>9</td>
+		<td height = '30px' id = 'multiplyer'>*</td>
+	</tr >
+	<tr align=center>
+		<td height = '30px' id= 'num4'>4</td>
+		<td height = '30px' id='num5'>5</td>
+		<td height = '30px' id='num6'>6</td>
+		<td height = '30px' id='sub' >-</td>
+	</tr>
+	<tr align=center>
+		<td height = '30px' id='num1'>1</td>
+		<td height = '30px' id='num2'>2</td>
+		<td height = '30px' id='num3'>3</td>
+		<td height = '30px' id = 'add'>+</td>
+	</tr>
+	<tr align=center>
+		<td colspan = 2; height = '30px' id = 'num0' >0</td>
+		<td height = '30px' id = 'decimal'>.</td>
+		<td height = '30px' id='equal'>=</td>
+		
+	</tr>
+	</table>
+	<script>	
+	function printSymbol(N)
+	{
+		let result = document.getElementById("result");
+		let obj = N.target;
+		//if(result.value == 0	)
+		result.value = result.value + obj.textContent;
+		
+	}	
+	function printNum(N)
+	{
+		let result = document.getElementById("result");
+		let obj = N.target;
+		
+		if(result.value == 0)
+			result.value = obj.textContent;
+		else
+			result.value = result.value + obj.textContent;
+	}	
+	
+	let result = document.getElementById("result");
+	result.textContent = "0";
+	
+	let num1 = document.getElementById("num1");
+	let num2 = document.getElementById("num2");
+	let num3 = document.getElementById("num3");
+	let num4 = document.getElementById("num4");
+	let num5 = document.getElementById("num5");
+	let num6 = document.getElementById("num6");
+	let num7 = document.getElementById("num7");
+	let num8 = document.getElementById("num8");
+	let num9 = document.getElementById("num9");
+	let num0 = document.getElementById("num0");
+	
+	let AC = document.getElementById("clear");
+	let reverse = document.getElementById("reverse");
+	let percentage = document.getElementById("percentage");
+	let sub = document.getElementById("sub");
+	let multiplyer = document.getElementById("multiplyer");
+	let devide = document.getElementById("devide");
+	let add = document.getElementById("add");
+	let decimal = document.getElementById("decimal");
+	let equal = document.getElementById("equal");
+	
+	
+	num1.addEventListener("click", printNum);
+	num2.addEventListener("click", printNum);
+	num3.addEventListener("click", printNum);
+	num4.addEventListener("click", printNum);
+	num5.addEventListener("click", printNum);
+	num6.addEventListener("click", printNum);
+	num7.addEventListener("click", printNum);
+	num8.addEventListener("click", printNum);
+	num9.addEventListener("click", printNum);
+	num0.addEventListener("click", printNum);
+	
+	percentage.addEventListener("click", printSymbol);
+	sub.addEventListener("click", printSymbol);
+	multiplyer.addEventListener("click", printSymbol);
+	devide.addEventListener("click", printSymbol);
+	add.addEventListener("click", printSymbol);
+	decimal.addEventListener("click", printSymbol);
+	
+	AC.addEventListener("click", e => document.getElementById("result").value = 0);
+	
+	equal.addEventListener("click", e=> result.value = eval(result.value))
+	</script>
+	
+	
+</body>
+</html>
